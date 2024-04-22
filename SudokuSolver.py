@@ -27,7 +27,8 @@ class Board:
             else:
                 board_string += lower_lines
         return board_string
-    def find_empty_cell(self):
+    
+    def find_empty_cell(self): # method that finds the empty cells in the sudoku board, self as a parameter, representing the instance of the class
         for row, contents in enumerate(self.board):
             try:
                 col = contents.index(0)
@@ -36,6 +37,6 @@ class Board:
                 pass
         return None
 
-    def valid_in_row(self, row, num):
+    def valid_in_row(self, row, num): # checks if the number is not already present in that row
         return num not in self.board[row]
         
