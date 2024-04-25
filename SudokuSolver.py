@@ -69,4 +69,40 @@ class Board:
             for guess in range(1, 10):
                 if self.is_valid(next_empty, guess):
                     row, col = next_empty # this is called unpack tuple :/
+                    self.board[row][col] = guess
+                    if self.solver():
+                        return True
+                    self.board[row][col] = 0
 
+        return False
+
+def solve_sudoku(board): # Function for solving Sudoku
+    gameboard = Board(board) # initializes the sudoku board with the given initial state.
+    print(f'\nPuzzle to solve:\n{gameboard}') # print the current state of the sudoku board.
+    if gameboard.solver(): # checks if the solver() method call from the gameboard object returns True.
+        print('\nSolved puzzle:')
+        print(gameboard)
+        
+    else:
+        print('\nThe provided puzzle is unsolvable.')
+        return gameboard
+
+
+# 
+# A puzzle has been given in the code.
+#puzzle = [
+# [0, 0, 2, 0, 0, 8, 0, 0, 0],
+# [0, 0, 0, 0, 0, 3, 7, 6, 2],
+# [4, 3, 0, 0, 0, 0, 8, 0, 0],
+# [0, 5, 0, 0, 3, 0, 0, 9, 0],
+# [0, 4, 0, 0, 0, 0, 0, 2, 6],
+# [0, 0, 0, 4, 6, 7, 0, 0, 0],
+# [0, 8, 6, 7, 0, 4, 0, 0, 0],
+# [0, 0, 0, 5, 1, 9, 0, 0, 8],
+# [1, 7, 0, 0, 0, 6, 0, 0, 5]
+#]
+#
+#solve_sudoku(puzzle)
+#
+#
+#
