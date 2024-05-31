@@ -7,8 +7,6 @@ class Board:
     #board_str = ''
     #    for row in self.board:
     #       row_str = [ str(i) if i != 0 else '*' for i in row ] comprenhension step problem
-    #       solved wirh
-    #       row_str = [ str(i) if i else '*' for i in row ] - correct answer
     #
         upper_lines = f'\n╔═══{"╤═══"*2}{"╦═══"}{"╤═══"*2}{"╦═══"}{"╤═══"*2}╗\n'
         middle_lines = f'╟───{"┼───"*2}{"╫───"}{"┼───"*2}{"╫───"}{"┼───"*2}╢\n'
